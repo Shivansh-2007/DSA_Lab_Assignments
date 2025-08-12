@@ -103,8 +103,8 @@ int main(){
 
     cout << "Transpose of Matrix 1 is:" << endl;
 
-    for(int i = 0; i < rows1; i++){
-        for(int j = 0; j < cols1; j++){
+    for(int i = 0; i < cols1; i++){
+        for(int j = 0; j < rows1; j++){
             cout << matrix1[j][i] << " ";
         }
         cout << endl;
