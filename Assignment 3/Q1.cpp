@@ -4,7 +4,6 @@ using namespace std;
 class Stack_implementation{
 
 private:
-
     int st[50];
     int top = -1;
 
