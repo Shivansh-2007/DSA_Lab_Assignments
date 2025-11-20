@@ -113,6 +113,30 @@ public:
         return 1 + std::min(minDepth(root->lchild), minDepth(root->rchild));
     }
 
+    void inorder_traversal(Node* root){
+        if(root != nullptr){
+            inorder_traversal(root->lchild);
+            cout << root->data << " ";
+            inorder_traversal(root->rchild);
+        }
+    }
+
+    void preorder_traversal(Node* root){
+        if(root != nullptr){
+            cout << root->data << " ";
+            preorder_traversal(root->lchild);
+            preorder_traversal(root->rchild);
+        }
+    }
+
+    void postorder_traversal(Node* root){
+        if(root != nullptr){
+            postorder_traversal(root->lchild);
+            postorder_traversal(root->rchild);
+            cout << root->data << " ";
+        }
+    }
+
 };
 
 int main() {
@@ -126,10 +150,12 @@ int main() {
     B1.insert_unique_element(5);
     B1.insert_unique_element(7);
 
-    B1.root = B1.deleteElement(B1.root, 4);
+    B1.inorder_traversal(B1.root);
+    cout << endl;
+    B1.preorder_traversal(B1.root);
+    cout << endl;
+    B1.postorder_traversal(B1.root);
 
-    cout << "Max depth: " << B1.maxDepth(B1.root) << '\n';
-    cout << "Min depth: " << B1.minDepth(B1.root) << '\n';
 
     return 0;
 }
